@@ -1,5 +1,5 @@
 const logRequest = (req, res, next) => {
-  console.log("log request", req.path);
+  console.log("a request to", req.path);
   next();
 };
 
