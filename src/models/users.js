@@ -5,4 +5,13 @@ const getAllUsers = () => {
   return dbPool.execute(query);
 };
 
-module.exports = { getAllUsers };
+const createNewUser = (body) => {
+  const query = `INSERT INTO mahasiswa (nim, nama, kelas, alamat)
+                 VALUES ('${body.nim}', '${body.nama}', '${body.kelas}', '${body.alamat}')`;
+  return dbPool.execute(query);
+};
+
+module.exports = {
+  getAllUsers,
+  createNewUser,
+};
